@@ -175,7 +175,7 @@ function App() {
               <div className='col-span-2 flex justify-center'>
                 <img src={dobble} style={{width:"300px"}}/>
               </div>
-              <div className='col-span-2 sm:col-span-1'>
+              <div className='col-span-2 sm:col-span-1 sm:flex sm:justify-end'>
                 <label>
                   Mode
                   <div className="tooltip">
@@ -194,7 +194,7 @@ function App() {
               </div>
 
               {/* <br /> */}
-              <div className='col-span-2 sm:col-span-1'>
+              <div className='col-span-2 sm:col-span-1 sm:flex sm:items-center'>
                 <label>
                   Duration
                   <select value={timerInput} onChange={(e) => setTimerInput(parseInt(e.target.value, 10))}
