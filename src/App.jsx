@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { dobble, bobcat, cow, elephant, iguana, myna, octopus, pangolin, penguin, spider, stingray, tortoise, quokka, orca, moose, narwhal, axolotl, mole, pelican, crab, racoon, anteater, platypus, orangutan, viper, chinchilla, electriceel, snowleopard, dragonfly, beardeddragon, peacock, falcon } from './assets';
+import { dobble, bobcat, cow, elephant, iguana, myna, octopus, pangolin, penguin, spider, stingray, tortoise, quokka, orca, moose, narwhal, axolotl, mole, pelican, crab, racoon, anteater, platypus, orangutan, viper, chinchilla, electriceel, snowleopard, dragonfly, beardeddragon, peacock, falcon, anglerfish, solenodon, kakapo, bumblebee, rhino, seal, camel, gharial, angelfish, ayeaye, hirola, snail, lemur, vaquita, secretarybird, glassfrog, tenrec, sloth, shrimp, moth, wolf, gecko, beetle, shoebill,  woodpecker, seadragon } from './assets';
 
 function App() {
   const [numberInput, setNumberInput] = useState(4);
@@ -17,15 +17,20 @@ function App() {
   const calculatePosition = (index) => {
     const radius = 25; // Adjust this value to control the circle's radius
     const angle = (index / numberInput) * 2 * Math.PI;
-    const x = radius * Math.cos(angle) - 20;
-    const y = radius * Math.sin(angle) -15;
+    var x = radius * Math.cos(angle) - 20;
+    var y = radius * Math.sin(angle) -15;
+
+    if (numberInput >= 6) {
+      x = radius * Math.cos(angle) - 9;
+      y = radius * Math.sin(angle) - 11;
+    }
 
     return { x, y };
   }
 
   const imgWidth = 400/numberInput + "px";
 
-  const stickers = [0, bobcat, cow, elephant, iguana, myna, octopus, pangolin, penguin, spider, stingray, tortoise, quokka, orca, moose, narwhal, axolotl, mole, pelican, crab, racoon, anteater, platypus, orangutan, viper, chinchilla, electriceel, snowleopard, dragonfly, beardeddragon, peacock, falcon];
+  const stickers = [0, bobcat, cow, elephant, iguana, myna, octopus, pangolin, penguin, spider, stingray, tortoise, quokka, orca, moose, narwhal, axolotl, mole, pelican, crab, racoon, anteater, platypus, orangutan, viper, chinchilla, electriceel, snowleopard, dragonfly, beardeddragon, peacock, falcon, anglerfish, solenodon, kakapo, bumblebee, rhino, seal, camel, gharial, angelfish, ayeaye, hirola, snail, lemur, vaquita, secretarybird, glassfrog, tenrec, sloth, shrimp, moth, wolf, gecko, beetle, shoebill, woodpecker, seadragon];
 
   const generateCards = () => {
 
@@ -128,10 +133,11 @@ function App() {
 
         setList1Index(newList1Index);
         setList2Index(newList2Index);
-      } else {
-        // Console log the value if the clicked item is not in the first list
-        console.log(value);
-      }
+      } 
+      // else {
+      //   // Console log the value if the clicked item is not in the first list
+      //   console.log(value);
+      // }
     }
   };
 
